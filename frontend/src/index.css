@@ -54,16 +54,19 @@ a {
 a:hover {
   color: #ff8000;
 }
-ul{
-  padding :0;
-  margin :0;
+ul {
+  padding: 0;
+  margin: 0;
   list-style-type: none;
 }
 
-li{
+li {
   margin-top: 1rem;
 }
-button{
+input,
+select,
+textarea,
+button {
   padding: 1rem;
   border-radius: 0.5rem;
   border: 0.1rem #a4a4a4 solid;
@@ -71,16 +74,22 @@ button{
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-   background-color: #f8f8f8;
-   cursor: pointer;
+  
 }
-button:hover{
+button{
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+input:hover,
+select:hover,
+textarea:hover,
+button:hover {
   border: 0.1rem #404040 solid;
 }
-button.primary{
+button.primary {
   background-color: #f0c040;
 }
-button.block{
+button.block {
   width: 100%;
 }
 header a {
@@ -120,7 +129,7 @@ img.medium {
   max-width: 29rem;
   width: 100%;
 }
-img.large{
+img.large {
   width: 100%;
 }
 
@@ -151,23 +160,23 @@ img.large{
 .rating span:last-child {
   color: #404040;
 }
-.success{
-  color: #20a020
+.success {
+  color: #20a020;
 }
-.danger{
-  color: #a02020
+.danger {
+  color: #a02020;
 }
 
-.alert{
+.alert {
   padding: 1rem;
   border: 0.1rem solid transparent;
-  border-radius: 0.5rem ;
+  border-radius: 0.5rem;
 }
-.alert-info{
+.alert-info {
   color: #2020a0;
-  background-color: #e0e0ff
+  background-color: #e0e0ff;
 }
-.alert-danger{
+.alert-danger {
   color: #a02020;
-  background-color: #ffe0e0e0
+  background-color: #ffe0e0e0;
 }
