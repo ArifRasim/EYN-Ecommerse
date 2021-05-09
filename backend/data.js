@@ -10,14 +10,13 @@ const data = {
     {
       name: "Patrick",
       email: "patrick@example.com",
-      password: bcrypt.hashSync("1234", 8),
+      password: bcrypt.hashSync("123", 8),
       isAdmin: false,
     },
   ],
   products: [
     {
-      _id: 1,
-      name: "Nike Slim Shirt",
+      name: "Nike Slim Shirt12",
       category: "Shirts",
       image: "/images/p1.jpg",
       price: 120,
@@ -28,8 +27,7 @@ const data = {
       description: "Slim shirt for man",
     },
     {
-      _id: 2,
-      name: "Adidas T-shirt",
+      name: "Adidas T-shirt2",
       category: "T-shirts",
       image: "/images/p2.jpg",
       price: 70,
@@ -40,8 +38,7 @@ const data = {
       description: "T-shirt for man",
     },
     {
-      _id: 3,
-      name: "Nike Slim Shirt",
+      name: "Nike Slim Shirt2",
       category: "Shirts",
       image: "/images/p3.jpg",
       price: 120,
@@ -52,8 +49,7 @@ const data = {
       description: "Slim shirt for man",
     },
     {
-      _id: 4,
-      name: "Nike Slim Shirt",
+      name: "Nike Slim Shirt3",
       category: "Shirts",
       image: "/images/p4.jpg",
       price: 120,
@@ -64,8 +60,7 @@ const data = {
       description: "Slim shirt for man",
     },
     {
-      _id: 5,
-      name: "Nike Slim Shirt",
+      name: "Nike Slim Shirt4",
       category: "Shirts",
       image: "/images/p5.jpg",
       price: 120,
@@ -76,8 +71,7 @@ const data = {
       description: "Slim shirt for man",
     },
     {
-      _id: 6,
-      name: "Nike Slim Shirt",
+      name: "Nike Slim Shirt5",
       category: "Shirts",
       image: "/images/p6.jpg",
       price: 120,
