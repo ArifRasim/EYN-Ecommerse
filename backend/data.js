@@ -1,4 +1,19 @@
+import bcrypt from "bcryptjs";
 const data = {
+  users: [
+    {
+      name: "Arif",
+      email: "arif@example.com",
+      password: bcrypt.hashSync("1234", 8),
+      isAdmin: true,
+    },
+    {
+      name: "Patrick",
+      email: "patrick@example.com",
+      password: bcrypt.hashSync("1234", 8),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
       _id: 1,
@@ -6,7 +21,7 @@ const data = {
       category: "Shirts",
       image: "/images/p1.jpg",
       price: 120,
-      countInStock:10,
+      countInStock: 10,
       brand: "Nike",
       rating: 3.5,
       numReviews: 10,
@@ -18,7 +33,7 @@ const data = {
       category: "T-shirts",
       image: "/images/p2.jpg",
       price: 70,
-      countInStock:2,
+      countInStock: 2,
       brand: "Adidas",
       rating: 2.5,
       numReviews: 102,
@@ -30,7 +45,7 @@ const data = {
       category: "Shirts",
       image: "/images/p3.jpg",
       price: 120,
-      countInStock:130,
+      countInStock: 130,
       brand: "Nike",
       rating: 1.5,
       numReviews: 10,
@@ -42,7 +57,7 @@ const data = {
       category: "Shirts",
       image: "/images/p4.jpg",
       price: 120,
-      countInStock : 0,
+      countInStock: 0,
       brand: "Nike",
       rating: 5,
       numReviews: 10,
@@ -54,7 +69,7 @@ const data = {
       category: "Shirts",
       image: "/images/p5.jpg",
       price: 120,
-      countInStock:130,
+      countInStock: 130,
       brand: "Nike",
       rating: 4.5,
       numReviews: 10,
@@ -66,7 +81,7 @@ const data = {
       category: "Shirts",
       image: "/images/p6.jpg",
       price: 120,
-      countInStock:130,
+      countInStock: 130,
       brand: "Nike",
       rating: 0.5,
       numReviews: 10,
