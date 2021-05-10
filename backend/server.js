@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import productRouter from "./routers/productRouter.js";
 import userRouter from "./routers/userRouter.js";
 import dotenv from "dotenv";
-import OrderRouter from "./routers/orderRouter.js";
+import orderRouter from "./routers/orderRouter.js";
 dotenv.config();
 
 const app = express();
@@ -14,11 +14,14 @@ mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/eyn", {
   useUnifiedTopology: true,
   useCreateIndex: true,
 });
+
 app.use("/api/users", userRouter);
-
 app.use("/api/products", productRouter);
-app.use('/api/orders',OrderRouter)
+app.use('/api/orders',orderRouter)
 
+app.get('/api/config/paypal',(req,res)=>{
+  res.send(process.env.PAYPAL_CLIENT_ID||'sb')
+})
 app.get("/", (req, res) => {
   res.send("Server is ready");
 });
