@@ -10,6 +10,7 @@ import RegisterScreen from "./screens/RegisterScreen";
 import ShippingAddressScreen from "./screens/ShippingAddressScreen";
 import PaymentMethodScreen from "./screens/PaymentMethodScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import OrderScreen from "./screens/OrderScreen";
 function App() {
   const dispatch = useDispatch();
   const singOutHandler = () => {
@@ -59,6 +60,7 @@ function App() {
           <Route path="/payment" component={PaymentMethodScreen} ></Route>
           <Route path="/placeorder" component={PlaceOrderScreen} ></Route>
           <Route path="/signin" component={SignInScreen}></Route>
+          <Route path="/order/:id" component={OrderScreen}></Route>
           <Route path="/" component={homeScreen} exact></Route>
         </main>
         <footer className="row center">All rights reserved</footer>
