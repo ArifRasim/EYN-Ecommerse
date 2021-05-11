@@ -11,6 +11,7 @@ import ShippingAddressScreen from "./screens/ShippingAddressScreen";
 import PaymentMethodScreen from "./screens/PaymentMethodScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
+import OrderHistoryScreen from "./screens/OrderHistoryScreen";
 function App() {
   const dispatch = useDispatch();
   const singOutHandler = () => {
@@ -42,6 +43,9 @@ function App() {
                   {userInfo.name} <i className="fa fa-caret-down"></i>
                 </Link>
                 <ul className="dropdown-content">
+                  <li>
+                    <Link to="/orderhistory">Order History</Link>
+                  </li>
                   <Link to="#signout" onClick={singOutHandler}>
                     Sigh Out
                   </Link>
@@ -55,12 +59,13 @@ function App() {
         <main>
           <Route path="/cart/:id?" component={CartScreen}></Route>
           <Route path="/product/:id" component={ProductScreen}></Route>
-          <Route path="/register" component={RegisterScreen} ></Route>
-          <Route path="/shipping" component={ShippingAddressScreen} ></Route>
-          <Route path="/payment" component={PaymentMethodScreen} ></Route>
-          <Route path="/placeorder" component={PlaceOrderScreen} ></Route>
+          <Route path="/register" component={RegisterScreen}></Route>
+          <Route path="/shipping" component={ShippingAddressScreen}></Route>
+          <Route path="/payment" component={PaymentMethodScreen}></Route>
+          <Route path="/placeorder" component={PlaceOrderScreen}></Route>
           <Route path="/signin" component={SignInScreen}></Route>
           <Route path="/order/:id" component={OrderScreen}></Route>
+          <Route path="/orderhistory" component={OrderHistoryScreen}></Route>
           <Route path="/" component={homeScreen} exact></Route>
         </main>
         <footer className="row center">All rights reserved</footer>
