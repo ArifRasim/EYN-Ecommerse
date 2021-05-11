@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import ProductScreen from "./screens/ProductScreen";
-import homeScreen from "./screens/HomeScreen";
 import CartScreen from "./screens/CartScreen";
 import { useDispatch, useSelector } from "react-redux";
 import SignInScreen from "./screens/SignInScreen";
@@ -14,9 +13,10 @@ import OrderScreen from "./screens/OrderScreen";
 import OrderHistoryScreen from "./screens/OrderHistoryScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import PrivateRoute from "./components/PrivateRoute";
+import HomeScreen from "./screens/HomeScreen";
 function App() {
   const dispatch = useDispatch();
-  const singOutHandler = () => {
+  const signOutHandler = () => {
     dispatch(signout());
   };
   const cart = useSelector((state) => state.cart);
@@ -52,7 +52,7 @@ function App() {
                     <Link to="/orderhistory">Order History</Link>
                   </li>
                   <li>
-                    <Link to="#signout" onClick={singOutHandler}>
+                    <Link to="#signout" onClick={signOutHandler}>
                       Sign Out
                     </Link>
                   </li>
@@ -60,6 +60,27 @@ function App() {
               </div>
             ) : (
               <Link to="/signin">Sign in</Link>
+            )}
+            {userInfo && userInfo.isAdmin && (
+              <div className="dropdown">
+                <Link to="#admin">
+                  Admin <i className="fa fa-caret-down"></i>{' '}
+                </Link>
+                <ul className="dropdown-content">
+                  <li>
+                    <Link to="/dashboard">Dashboard</Link>
+                  </li>
+                  <li>
+                    <Link to="/productlist">Products</Link>
+                  </li>
+                  <li>
+                    <Link to="/orderlist">Orders</Link>
+                  </li>
+                  <li>
+                    <Link to="/userlist">Users</Link>
+                  </li>
+                </ul>
+              </div>
             )}
           </div>
         </header>
@@ -77,7 +98,7 @@ function App() {
             path="/profile"
             component={ProfileScreen}
           ></PrivateRoute>
-          <Route path="/" component={homeScreen} exact></Route>
+          <Route path="/" component={HomeScreen} exact></Route>
         </main>
         <footer className="row center">All rights reserved</footer>
       </div>
