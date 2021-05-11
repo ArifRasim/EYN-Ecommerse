@@ -44,14 +44,27 @@ userRouter.post(
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 8),
     });
-    const createdUser = await user.save()
+    const createdUser = await user.save();
     res.send({
       _id: createdUser._id,
       name: createdUser.name,
       email: createdUser.email,
       isAdmin: createdUser.isAdmin,
       token: generateToken(createdUser),
-    })
+    });
   })
 );
+
+userRouter.get(
+  `/:id`,
+  expressAsyncHandler(async (req, res) => {
+    const user = await User.findById(req.params.id);
+    if (user) {
+      res.send(user);
+    } else {
+      res.status(404).send({ message: "User not found" });
+    }
+  })
+);
+
 export default userRouter;
